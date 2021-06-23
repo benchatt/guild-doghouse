@@ -3,7 +3,7 @@ The Dog Shelter test case for Guild Education interview, Ben Chatterton
 
 ## How to install
 - Clone the repository
-- Be sure you are running Python 3.6 or later
+- Be sure you are running Python 3.6 or later, and have the latest version of pytest installed
 - From the `guild-doghouse` directory, run:
 > python3 setup.py pytest
 
