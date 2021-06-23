@@ -1,18 +1,18 @@
 {
 "basic_succeed": 
-  [{"small": 3, "medium": 7, "large": 8, "leftovers": 13.1}, {"total":396.9,"error":false}],
+  [{"small": 3, "medium": 7, "large": 8, "leftovers": 13.1}, {"total":476.28,"error":false}],
 "succeed_two": 
-  [{"small": 9, "medium": 10, "large": 11, "food": 198.5}, {"total":421.5,"error":false}],
+  [{"small": 9, "medium": 10, "large": 11, "food": 198.5}, {"total":505.8,"error":false}],
 "empty_category_explicit":
-  [{"small": 0, "medium": 10, "large": 11, "food": 198.5}, {"total":331.5,"error":false}],
+  [{"small": 0, "medium": 10, "large": 11, "food": 198.5}, {"total":397.8,"error":false}],
 "empty_category_implicit":
-  [{"medium": 10, "large": 11, "food": 198.5}, {"total":331.5,"error":false}],
+  [{"medium": 10, "large": 11, "food": 198.5}, {"total":397.8,"error":false}],
 "empty_pantry_implicit":
-  [{"medium": 10, "large": 11}, {"total":530,"error":true}],
+  [{"medium": 10, "large": 11}, {"total":636,"error":true}],
 "too_much_food":
   [{"small": 10, "medium": 10, "large": 10, "remaining": 601}, {"total":0,"error":true}],
 "too_many_dogs":
-  [{"small": 11, "medium": 10, "large": 10, "remaining": 2}, {"total":608,"error":true}],
+  [{"small": 11, "medium": 10, "large": 10, "remaining": 2}, {"total":729.6,"error":true}],
 "way_too_many_dogs":
   [{"small": 10000000000000000, "medium": 10000000000000000, "large": 10000000000000000, "remaining": 2}, {"total":null,"error":true}],
 "zero_dogs_explicit":
@@ -20,19 +20,19 @@
 "zero_dogs_implicit":
   [{"remaining": 2}, {"total":0,"error":true}],
 "partial_dogs":
-  [{"small": 1.5, "medium": 10, "large": 10, "remaining": 2.3}, {"total":512.7,"error":true}],
+  [{"small": 1.5, "medium": 10, "large": 10, "remaining": 2.3}, {"total":625.2,"error":true}],
 "negative_food":
-  [{"small": 10, "medium": 10, "large": 10, "remaining": -20}, {"total":620,"error":true}],
+  [{"small": 10, "medium": 10, "large": 10, "remaining": -20}, {"total":744,"error":true}],
 "unknown_category":
-  [{"cats":3, "small": 10, "medium": 10, "large": 10, "remaining": 100}, {"total":500,"error":true}],
+  [{"cats":3, "small": 10, "medium": 10, "large": 10, "remaining": 100}, {"total":600,"error":true}],
 "unknown_orthography":
-  [{"Small": 10, "medium": 10, "lArGe": 10, "remaining": 300}, {"total":300,"error":false}],
+  [{"Small": 10, "medium": 10, "lArGe": 10, "remaining": 300}, {"total":360,"error":false}],
 "unknown_food_category":
-  [{"small": 10, "medium": 10, "large": 10, "kibble": 550}, {"total":600,"error":true}],
+  [{"small": 10, "medium": 10, "large": 10, "kibble": 550}, {"total":720,"error":true}],
 "incorrect_type":
   [{"small": "ten", "medium": 10, "large": 10, "remaining": 20}, {"total":null,"error":true}],
 "precision_overflow":
-  [{"small": 10, "medium": 10, "large": 10, "remaining": 7.85724285764285813}, {"total":592.1427571423571,"error":false}],
+  [{"small": 10, "medium": 10, "large": 10, "remaining": 7.85724285764285813}, {"total":710.5713085708286,"error":false}],
 "empty":
  [{},{"total":null,"error":false}],
 "garbage":

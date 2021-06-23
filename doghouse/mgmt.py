@@ -24,12 +24,12 @@ def estimate_food(jsondata):
         result = result + "You have too many dogs.\n"
         error = 'TOO_MANY_DOGS'
     elif alldogs < 1:
-        result = result + "You have no dogs, or negative dogs!"
+        result = result + "You have no dogs, or negative dogs!\n"
         error = 'INSUFFICIENT_DOGS'
-        return {'result':result, 'error':error}
     needed = float(dogdata['small']*10.0) + float(dogdata['medium']*20.0) +\
              float(dogdata['large']*30.0)
-    result = result + "You need "+str(needed-dogdata[foodkey])+" lbs of dog food this month."
+    lbs_str_w_overage = str((needed-dogdata[foodkey])*1.2)
+    result = result + "You need "+lbs_str_w_overage+" lbs of dog food this month."
     return {'result': result, 'error': error}
 
 if __name__ == '__main__':
