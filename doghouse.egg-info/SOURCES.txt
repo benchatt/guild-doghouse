@@ -1,0 +1,10 @@
+README.md
+setup.py
+doghouse/__init__.py
+doghouse/mgmt.py
+doghouse.egg-info/PKG-INFO
+doghouse.egg-info/SOURCES.txt
+doghouse.egg-info/dependency_links.txt
+doghouse.egg-info/top_level.txt
+tests/__init__.py
+tests/test_estimate_food.py

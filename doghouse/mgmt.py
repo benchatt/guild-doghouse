@@ -1,26 +1,25 @@
 import sys
+import json
 
-def estimate_food(jsonfile):
+def estimate_food(jsondata):
     result = ''
     error = ''
-    import json
-    with open(jsonfile) as stream:
-        rawdata = stream.read().lower()
-    dogdata = json.loads(rawdata)
+    dogdata = json.loads(jsondata.lower())
     foodkey = None
     for k in [k for k in dogdata.keys() if k not in ['small','medium','large']]:
         if 'remain' in k or 'left' in k or 'food' in k:
             foodkey = k
         else:
-            result = result + f"Found extra data: {k}: {dogdata[k]}"+'\n'
+            result = result + "Found extra data: "+k+": "+str(dogdata[k])+'\n'
     if foodkey is None:
         result = result + "No entry for leftover food found, assuming 0.0 lbs left over.\n"
+        error = "WARNING: ASSUMING 0.0 LB FOOD REMAINING"
         foodkey = "remain"
         dogdata[foodkey] = 0.0
     for size in ['small','medium','large']:
         if size not in dogdata.keys():
             dogdata[size] = 0
-    alldogs =  dogdata['small'] + dogdata['medium'] + dogdata['large']
+    alldogs = dogdata['small'] + dogdata['medium'] + dogdata['large']
     if alldogs > 30:
         result = result + "You have too many dogs.\n"
         error = 'TOO_MANY_DOGS'
@@ -30,8 +29,10 @@ def estimate_food(jsonfile):
         return {'result':result, 'error':error}
     needed = float(dogdata['small']*10.0) + float(dogdata['medium']*20.0) +\
              float(dogdata['large']*30.0)
-    result = result + "You need {needed-dogdata[foodkey]} lbs of dog food this month."
+    result = result + "You need "+str(needed-dogdata[foodkey])+" lbs of dog food this month."
     return {'result': result, 'error': error}
 
 if __name__ == '__main__':
-    data = estimate_food(sys.argv[1])
+    with open(sys.argv[1]) as stream:
+        rawdata = stream.read()
+    data = estimate_food(rawdata)
